@@ -10,7 +10,7 @@ Hashinator is a Python script that helps you identify the hash type of a passwor
 
 ## Usage
 
-1. Clone the repository or download the `hash_cracker.py` file.
+1. Clone the repository or download the `hashinator.py` file.
 
 2. Install the `termcolor` library if you haven't done so:
 
