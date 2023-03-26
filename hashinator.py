@@ -1,7 +1,6 @@
 import hashlib
 from termcolor import colored
 
-# Function to identify the hash type and hashcat mode
 def identify_hash(hash_str):
     hash_type = None
     hashcat_mode = None
@@ -34,23 +33,19 @@ def identify_hash(hash_str):
     
     return hash_type, hashcat_mode, hashcat_syntax, john_syntax
 
-# Prompt for the password hash
 hash_str = input("Enter the password hash: ")
 
-# Identify the hash type, hashcat mode, and John the Ripper format
 hash_type, hashcat_mode, hashcat_syntax, john_syntax = identify_hash(hash_str)
 
-# Print the hash type and hashcat mode in red color
 print(colored(f"Hash Type: {hash_type}\nHashcat Mode: {hashcat_mode}\nJohn the Ripper Format: {john_syntax}\n", "red"))
 
-# Prompt the user to choose whether to crack the hash with John the Ripper or Hashcat
 choice = input("Do you want to crack the hash with John the Ripper or Hashcat? (J/H): ")
 
 if choice.lower() == 'j':
-    # Crack the hash with John the Ripper
+    
     print(f"Use the following command to crack the hash with John the Ripper:\n{john_syntax} --wordlist=example_wordlist.txt")
 elif choice.lower() == 'h':
-    # Crack the hash with Hashcat
+    
     print(f"Use the following command to crack the hash with Hashcat:\n{hashcat_syntax}")
 else:
     print("Invalid choice")
